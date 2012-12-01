@@ -8,8 +8,7 @@ var  url = require('url')
  , path = require('path');
   
 var loginRoute = require('./routes/login')
- , indexRoute = require('./routes/index')
- , userRoute = require('./routes/user');
+ , indexRoute = require('./routes/index');
 
 // var siteUrl = "ec2-50-17-29-137.compute-1.amazonaws.com";
 var siteUrl = "localhost";
@@ -46,8 +45,8 @@ app.configure('development', function(){
 
 app.get('/', loginRoute.login);
 app.get('/login', loginRoute.login);
+app.get('/registration', loginRoute.login);
 app.get('/index', indexRoute.index);
-app.get('/users', userRoute.list);
 
  var registerSocket = io
  	.of('/register')
